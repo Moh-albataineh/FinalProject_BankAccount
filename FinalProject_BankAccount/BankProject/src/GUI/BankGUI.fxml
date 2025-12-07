@@ -1,0 +1,166 @@
+<!--/**
+ * Mohammad Albatainah
+ * version 2025-12-7
+ * I built all of this myself using Scener Builder, which is an extension
+ * in VS that allows you to build the GUI manually by dragging and dropping using javaFX. 
+ */-->
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="1200.0" styleClass="root-pane" stylesheets="@bank-styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="General.BankGUIController">
+
+    <left>
+        <VBox styleClass="panel-container" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="15.0" top="20.0" />
+            </padding>
+
+            <VBox spacing="15.0" styleClass="card-panel" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+
+                <Label styleClass="section-title" text="Create New Account" />
+                <Separator styleClass="section-separator" />
+
+                <VBox spacing="8.0">
+                    <Label styleClass="field-label" text="Owner Name:" />
+                    <TextField fx:id="ownerNameField" promptText="Enter owner name" styleClass="text-input" />
+                </VBox>
+
+                <VBox spacing="8.0">
+                    <Label styleClass="field-label" text="Initial Balance:" />
+                    <TextField fx:id="initialBalanceField" promptText="0.00" styleClass="text-input" />
+                </VBox>
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <Button fx:id="createAccountButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleCreateAccount" styleClass="btn-primary" text="Create Account" />
+   
+               <Button fx:id="showAllAccountsButton" mnemonicParsing="false" onAction="#handleShowAllAccounts" prefWidth="180.0" styleClass="btn-accent" text="Show All Accounts" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="panel-container" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="15.0" right="15.0" top="20.0" />
+            </padding>
+
+            <VBox spacing="15.0" styleClass="card-panel" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+
+
+                <Label styleClass="section-title" text="Account Operations" />
+                <Separator styleClass="section-separator" />
+
+                <VBox spacing="12.0">
+                    <VBox spacing="8.0">
+                        <Label styleClass="field-label" text="Account Number:" />
+                        <TextField fx:id="accountNumberField" promptText="Enter account #" styleClass="text-input" />
+                    </VBox>
+
+                    <VBox spacing="8.0">
+                        <Label styleClass="field-label" text="Amount:" />
+                        <TextField fx:id="amountField" promptText="0.00" styleClass="text-input" />
+                    </VBox>
+                </VBox>
+
+
+                <VBox spacing="10.0">
+                    <HBox spacing="12.0">
+                        <Button fx:id="depositButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleDeposit" styleClass="btn-success" text="Deposit" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="withdrawButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleWithdraw" styleClass="btn-danger" text="Withdraw" HBox.hgrow="ALWAYS" />
+                    </HBox>
+
+                    <HBox spacing="12.0">
+                        <Button fx:id="showBalanceButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleShowBalance" styleClass="btn-secondary" text="Show Balance" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="showStatementButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleShowStatement" styleClass="btn-secondary" text="Show Statement" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                </VBox>
+
+                <Separator styleClass="section-separator" />
+
+
+                <VBox spacing="12.0">
+                    <Label styleClass="subsection-title" text="Transfer Funds" />
+
+                    <VBox spacing="8.0">
+                        <Label styleClass="field-label" text="Target Account #:" />
+                        <TextField fx:id="targetAccountField" promptText="Destination account" styleClass="text-input" />
+                    </VBox>
+
+                    <Button fx:id="transferButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleTransfer" styleClass="btn-warning" text="Transfer" />
+                </VBox>
+
+                <Separator styleClass="section-separator" />
+
+
+                <VBox spacing="12.0">
+                    <Label styleClass="subsection-title" text="Account Management" />
+
+                    <VBox spacing="8.0">
+                        <Label styleClass="field-label" text="New Owner Name:" />
+                        <TextField fx:id="newOwnerNameField" promptText="Enter new name" styleClass="text-input" />
+                    </VBox>
+
+                    <HBox spacing="12.0">
+                        <Button fx:id="changeOwnerButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleChangeOwner" styleClass="btn-info" text="Change Owner" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="removeAccountButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleRemoveAccount" styleClass="btn-danger-outline" text="Remove Account" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </VBox>
+    </center>
+
+
+    <right>
+        <VBox styleClass="panel-container" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="15.0" right="20.0" top="20.0" />
+            </padding>
+
+            <VBox spacing="15.0" styleClass="card-panel" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+
+                <Label styleClass="section-title" text="Information Display" />
+                <Separator styleClass="section-separator" />
+
+                <TextArea fx:id="outputArea" editable="false" prefColumnCount="40" prefRowCount="30" promptText="Welcome to Bank Management System&#10;================================&#10;&#10;Output and transaction details will appear here..." styleClass="output-area" wrapText="true" VBox.vgrow="ALWAYS" />
+   
+               <Button fx:id="clearOutputButton" mnemonicParsing="false" onAction="#handleClearOutput" prefWidth="140.0" styleClass="btn-neutral" text="Clear Output" />
+            </VBox>
+        </VBox>
+    </right>
+
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="15.0" styleClass="bottom-bar" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Region HBox.hgrow="ALWAYS" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
