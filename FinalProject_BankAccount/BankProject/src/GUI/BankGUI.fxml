@@ -1,11 +1,3 @@
-<!--/**
- * Mohammad Albatainah
- * version 2025-12-7
- * I built all of this myself using Scener Builder, which is an extension
- * in VS that allows you to build the GUI manually by dragging and dropping using javaFX. 
- */-->
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
@@ -18,6 +10,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+
+<!--/**
+ * Mohammad Albatainah
+ * version 2025-12-7
+ * I built all of this myself using Scener Builder, which is an extension
+ * in VS that allows you to build the GUI manually by dragging and dropping using javaFX. 
+ */-->
 
 <BorderPane prefHeight="700.0" prefWidth="1200.0" styleClass="root-pane" stylesheets="@bank-styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="General.BankGUIController">
 
