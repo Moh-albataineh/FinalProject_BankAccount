@@ -34,7 +34,7 @@ public class BankAccount {
     }
     
     /**
-     * Overloaded constructor
+     * 
      * @param ownerName The name of the account owner
      * @param initialBalance The starting balance
      * @throws IllegalArgumentException if initialBalance is negative
@@ -48,7 +48,7 @@ public class BankAccount {
         this.accountNumber = nextAccountNumber++;
         this.transactions = new StringBuilder();
         
-        // Record initial balance if greater than zero
+        
         if (initialBalance > 0) {
             addTransactionRecord("Initial Deposit", initialBalance);
         }
@@ -149,4 +149,5 @@ public class BankAccount {
         return String.format("Account #%d - Owner: %s - Balance: $%.2f", 
                            accountNumber, ownerName, balance);
     }
+
 }
