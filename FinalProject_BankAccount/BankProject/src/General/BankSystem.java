@@ -146,7 +146,7 @@ public class BankSystem {
      * @return ArrayList of all BankAccount objects
      */
     public ArrayList<BankAccount> getAllAccounts() {
-        return new ArrayList<>(accounts); // Return a copy to protect internal list
+        return new ArrayList<>(accounts); 
     }
     
     /**
@@ -176,4 +176,5 @@ public class BankSystem {
         
         return summary.toString();
     }
+
 }
